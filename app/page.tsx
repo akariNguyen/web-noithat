@@ -1,65 +1,121 @@
-import Image from "next/image";
+import Header from "@/components/header";
+
+const categories = [
+  {
+    name: "Sofa",
+    description: "Các mẫu sofa phòng khách hiện đại, sang trọng.",
+  },
+  {
+    name: "Bàn trà",
+    description: "Bàn trà gỗ, đá, kính phù hợp nhiều không gian.",
+  },
+  {
+    name: "Tủ quần áo",
+    description: "Tủ quần áo tiện dụng, bền đẹp và tối ưu không gian.",
+  },
+  {
+    name: "Giường ngủ",
+    description: "Giường ngủ hiện đại, chắc chắn và thẩm mỹ.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main>
+      <Header />
+
+      <section id="trang-chu" className="hero-section">
+        <div className="container hero-content">
+          <p className="small-title">Không gian sống hiện đại</p>
+
+          <h1>Nội thất đẹp cho căn nhà của bạn</h1>
+
+          <p className="hero-description">
+            Chúng tôi mang đến các dòng sản phẩm nội thất phù hợp cho phòng
+            khách, phòng ngủ và không gian gia đình hiện đại.
+          </p>
+
+          <div className="hero-actions">
+            <a href="#danh-muc" className="primary-button">
+              Xem danh mục
+            </a>
+
+            <a href="#lien-he" className="secondary-button">
+              Liên hệ tư vấn
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="danh-muc" className="section">
+        <div className="container">
+          <div className="section-heading">
+            <p className="small-title">Danh mục</p>
+            <h2>Danh mục nội thất nổi bật</h2>
+            <p>
+              Các nhóm sản phẩm chính được sắp xếp rõ ràng để khách hàng dễ tìm
+              kiếm và lựa chọn.
+            </p>
+          </div>
+
+          <div className="category-grid">
+            {categories.map((category) => (
+              <article className="category-card" key={category.name}>
+                <h3>{category.name}</h3>
+                <p>{category.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="gioi-thieu" className="section about-section">
+        <div className="container about-content">
+          <div>
+            <p className="small-title">Giới thiệu</p>
+            <h2>Thiết kế tinh tế, chất lượng bền lâu</h2>
+          </div>
+
+          <p>
+            Nội Thất An Gia hướng đến việc tạo ra không gian sống tiện nghi,
+            hiện đại và phù hợp với nhu cầu sử dụng thực tế của từng gia đình.
+            Mỗi sản phẩm được chọn lọc dựa trên kiểu dáng, chất liệu và khả năng
+            phối hợp với nhiều phong cách nhà ở.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section id="lien-he" className="section contact-section">
+        <div className="container contact-box">
+          <div>
+            <p className="small-title">Liên hệ</p>
+            <h2>Cần tư vấn nội thất?</h2>
+            <p>
+              Liên hệ với chúng tôi để được tư vấn mẫu mã, kích thước và phong
+              cách phù hợp với không gian của bạn.
+            </p>
+          </div>
+
+          <div className="contact-info">
+            <p>
+              <strong>Hotline:</strong> 0900 000 000
+            </p>
+            <p>
+              <strong>Email:</strong> noithat@example.com
+            </p>
+            <p>
+              <strong>Địa chỉ:</strong> Huế, Việt Nam
+            </p>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <footer className="footer">
+        <div className="container footer-inner">
+          <p>© 2026 Nội Thất An Gia</p>
+          <p>Website tĩnh deploy bằng Vercel</p>
+        </div>
+      </footer>
+    </main>
   );
 }
