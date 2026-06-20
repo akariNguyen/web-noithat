@@ -1,6 +1,7 @@
 .trangchu {
   background: #f7f1e8;
   color: #1f1a14;
+  overflow-x: hidden;
 }
 
 .container {
@@ -8,9 +9,11 @@
   margin: 0 auto;
 }
 
+/* ================= BANNER ================= */
+
 .hero {
   width: 100%;
-  padding: 28px 20px 12px;
+  padding: 28px 20px 16px;
   background: #f7f1e8;
   display: flex;
   justify-content: center;
@@ -18,12 +21,15 @@
 
 .heroImage {
   display: block;
-  width: min(100%, 1050px);
-  max-height: 560px;
-  object-fit: contain;
+  width: min(100%, 1120px);
+  height: 520px;
+  object-fit: cover;
+  object-position: top center;
   border-radius: 18px;
   box-shadow: 0 16px 40px rgba(95, 61, 33, 0.16);
 }
+
+/* ================= DANH MỤC ================= */
 
 .categorySection {
   padding: 56px 0 72px;
@@ -38,7 +44,7 @@
 .eyebrow {
   margin-bottom: 8px;
   color: #8b5e34;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 14px;
@@ -116,34 +122,8 @@
   line-height: 1.6;
 }
 
-@media (max-width: 1024px) {
-  .categoryGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+/* ================= DỊCH VỤ ================= */
 
-@media (max-width: 640px) {
-  .container {
-    width: min(100% - 24px, 1120px);
-  }
-
-  .categorySection {
-    padding: 36px 0 48px;
-  }
-
-  .categoryGrid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .sectionHeader {
-    margin-bottom: 24px;
-  }
-
-  .sectionHeader p {
-    font-size: 15px;
-  }
-}
 .serviceBox {
   margin-top: 26px;
   padding: 26px 28px;
@@ -190,18 +170,169 @@
   line-height: 1.5;
 }
 
+/* ================= TABLET ================= */
+
+@media (max-width: 1024px) {
+  .heroImage {
+    height: 440px;
+  }
+
+  .categoryGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ================= MOBILE ================= */
+
 @media (max-width: 768px) {
-  .serviceBox {
+  .container {
+    width: min(100% - 24px, 1120px);
+  }
+
+  .hero {
+    padding: 14px 12px 8px;
+  }
+
+  .heroImage {
+    width: 100%;
+    height: 260px;
+    border-radius: 12px;
+    object-fit: cover;
+    object-position: top center;
+    box-shadow: 0 10px 26px rgba(95, 61, 33, 0.14);
+  }
+
+  .categorySection {
+    padding: 34px 0 46px;
+  }
+
+  .sectionHeader {
+    margin-bottom: 24px;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.8px;
+  }
+
+  .sectionHeader h1 {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  .sectionHeader p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .categoryGrid {
     grid-template-columns: 1fr;
-    padding: 22px 18px;
     gap: 16px;
   }
 
+  .categoryCard {
+    border-radius: 14px;
+  }
+
+  .categoryImageWrap {
+    aspect-ratio: 16 / 10;
+  }
+
+  .categoryContent {
+    padding: 14px 14px 16px;
+  }
+
+  .categoryContent h2 {
+    font-size: 16px;
+  }
+
+  .categoryContent p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .serviceBox {
+    margin-top: 20px;
+    grid-template-columns: 1fr;
+    padding: 18px 14px;
+    gap: 14px;
+    border-radius: 14px;
+  }
+
+  .serviceItem {
+    gap: 12px;
+  }
+
+  .serviceIcon {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    font-size: 20px;
+    border-radius: 10px;
+  }
+
   .serviceItem h3 {
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 1.35;
   }
 
   .serviceItem p {
     font-size: 13px;
+    line-height: 1.45;
+  }
+}
+
+/* ================= MOBILE NHỎ ================= */
+
+@media (max-width: 430px) {
+  .container {
+    width: min(100% - 22px, 1120px);
+  }
+
+  .hero {
+    padding: 12px 10px 6px;
+  }
+
+  .heroImage {
+    height: 220px;
+  }
+
+  .categorySection {
+    padding: 30px 0 40px;
+  }
+
+  .sectionHeader h1 {
+    font-size: 24px;
+  }
+
+  .sectionHeader p {
+    font-size: 13.5px;
+  }
+
+  .categoryContent h2 {
+    font-size: 15px;
+  }
+
+  .categoryContent p {
+    font-size: 13px;
+  }
+
+  .serviceBox {
+    padding: 16px 12px;
+  }
+
+  .serviceIcon {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+    font-size: 18px;
+  }
+
+  .serviceItem h3 {
+    font-size: 13px;
+  }
+
+  .serviceItem p {
+    font-size: 12.5px;
   }
 }

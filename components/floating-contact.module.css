@@ -11,15 +11,19 @@
 .contactButton {
   width: 54px;
   height: 54px;
-  border-radius: 50%;
+  border-radius: 999px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
+
   color: #ffffff;
-  font-weight: 800;
+  font-weight: 900;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .contactButton:hover {
@@ -34,6 +38,7 @@
 .zaloText {
   font-size: 15px;
   line-height: 1;
+  letter-spacing: -0.2px;
 }
 
 .phoneButton {
@@ -60,10 +65,11 @@
   }
 }
 
-@media (max-width: 640px) {
+/* Tablet */
+@media (max-width: 768px) {
   .floatingContact {
     right: 14px;
-    bottom: 82px;
+    bottom: 88px;
     gap: 10px;
   }
 
@@ -78,5 +84,47 @@
 
   .phoneIcon {
     font-size: 24px;
+  }
+}
+
+/* Điện thoại nhỏ */
+@media (max-width: 430px) {
+  .floatingContact {
+    right: 10px;
+    bottom: 72px;
+    gap: 8px;
+  }
+
+  .contactButton {
+    width: 44px;
+    height: 44px;
+  }
+
+  .zaloText {
+    font-size: 12px;
+  }
+
+  .phoneIcon {
+    font-size: 22px;
+  }
+}
+
+/* Màn hình rất thấp, tránh che footer quá lố */
+@media (max-height: 640px) {
+  .floatingContact {
+    bottom: 58px;
+  }
+
+  .contactButton {
+    width: 42px;
+    height: 42px;
+  }
+
+  .zaloText {
+    font-size: 11px;
+  }
+
+  .phoneIcon {
+    font-size: 21px;
   }
 }
