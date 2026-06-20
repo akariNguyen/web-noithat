@@ -1,0 +1,82 @@
+.floatingContact {
+  position: fixed;
+  right: 18px;
+  bottom: 110px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contactButton {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 800;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contactButton:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+}
+
+.zaloButton {
+  background: #0068ff;
+}
+
+.zaloText {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.phoneButton {
+  background: #0c8f4f;
+  animation: phonePulse 1.4s infinite;
+}
+
+.phoneIcon {
+  font-size: 28px;
+  line-height: 1;
+}
+
+@keyframes phonePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(12, 143, 79, 0.45);
+  }
+
+  70% {
+    box-shadow: 0 0 0 13px rgba(12, 143, 79, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(12, 143, 79, 0);
+  }
+}
+
+@media (max-width: 640px) {
+  .floatingContact {
+    right: 14px;
+    bottom: 82px;
+    gap: 10px;
+  }
+
+  .contactButton {
+    width: 48px;
+    height: 48px;
+  }
+
+  .zaloText {
+    font-size: 13px;
+  }
+
+  .phoneIcon {
+    font-size: 24px;
+  }
+}

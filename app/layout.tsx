@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Nội Thất An Gia",
+  title: "Nội Thất BHome",
   description: "Website giới thiệu danh mục nội thất gia đình.",
 };
 

@@ -29,10 +29,13 @@ a {
   text-decoration: none;
 }
 
+/* Container mặc định cho nội dung trang */
 .container {
   width: min(1120px, calc(100% - 40px));
   margin: 0 auto;
 }
+
+/* ================= HEADER ================= */
 
 .site-header {
   position: sticky;
@@ -41,6 +44,14 @@ a {
   background: rgba(247, 241, 232, 0.9);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
+}
+
+/* Header dùng full ngang màn hình để logo trái, menu phải */
+.site-header .container {
+  width: 100%;
+  max-width: none;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .header-inner {
@@ -58,6 +69,7 @@ a {
   font-weight: 800;
   color: var(--primary-dark);
   background: transparent;
+  margin-left: 0;
 }
 
 .logo-image {
@@ -69,10 +81,12 @@ a {
   border: none;
   border-radius: 0;
 }
+
 .nav-menu {
   display: flex;
   align-items: center;
   gap: 28px;
+  margin-left: auto;
 }
 
 .nav-menu a {
@@ -85,6 +99,8 @@ a {
 .nav-menu a:hover {
   color: var(--primary);
 }
+
+/* ================= HERO ================= */
 
 .hero-section {
   min-height: calc(100vh - 76px);
@@ -164,6 +180,8 @@ a {
   transform: translateY(-2px);
 }
 
+/* ================= SECTION CHUNG ================= */
+
 .section {
   padding: 90px 0;
 }
@@ -188,6 +206,8 @@ a {
   line-height: 1.7;
   margin-top: 14px;
 }
+
+/* ================= DANH MỤC ================= */
 
 .category-grid {
   display: grid;
@@ -220,6 +240,8 @@ a {
   line-height: 1.65;
 }
 
+/* ================= GIỚI THIỆU ================= */
+
 .about-section {
   background: var(--primary-dark);
   color: white;
@@ -239,6 +261,8 @@ a {
 .about-content p {
   color: #eadbc8;
 }
+
+/* ================= LIÊN HỆ ================= */
 
 .contact-section {
   background: #fffaf3;
@@ -269,17 +293,117 @@ a {
   color: var(--text);
 }
 
+/* ================= FOOTER ================= */
+
 .footer {
   border-top: 1px solid var(--border);
-  padding: 28px 0;
   color: var(--muted);
 }
 
+.footer-info-bar {
+  background: #006b3f;
+  color: white;
+}
+
+.footer-info-inner {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  min-height: 70px;
+  padding-left: 48px;
+  padding-right: 48px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 28px;
+}
+
+/* Khối chung */
+.footer-info-item,
+.footer-info-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+/* Khối 1: canh trái */
+.footer-info-inner > :nth-child(1) {
+  justify-self: start;
+  text-align: left;
+}
+
+/* Khối 2: canh giữa */
+.footer-info-inner > :nth-child(2) {
+  justify-self: center;
+  text-align: left;
+}
+
+/* Khối 3: canh phải */
+.footer-info-inner > :nth-child(3) {
+  justify-self: end;
+  text-align: left;
+}
+
+.footer-info-icon,
+.footer-info-logo {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  border: 2px solid rgba(255, 255, 255, 0.72);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.footer-info-item p,
+.footer-info-brand p {
+  font-size: 11px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  font-weight: 800;
+  opacity: 0.95;
+}
+
+.footer-info-item strong,
+.footer-info-brand strong {
+  display: block;
+  font-size: 18px;
+  line-height: 1.15;
+  font-weight: 900;
+  letter-spacing: 0.3px;
+}
+
+.footer-info-item small,
+.footer-info-brand small {
+  display: block;
+  font-size: 11px;
+  line-height: 1.2;
+  opacity: 0.9;
+}
+
+.footer-info-brand p {
+  text-transform: none;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.footer-info-brand small {
+  font-style: italic;
+}
+
 .footer-inner {
+  width: 100%;
+  max-width: none;
+  padding: 22px 48px;
   display: flex;
   justify-content: space-between;
   gap: 20px;
 }
+/* ================= RESPONSIVE ================= */
 
 @media (max-width: 900px) {
   .nav-menu {
@@ -303,6 +427,21 @@ a {
 @media (max-width: 620px) {
   .container {
     width: min(100% - 28px, 1120px);
+  }
+
+  .site-header .container {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .logo-image {
+    width: 38px;
+    height: 38px;
   }
 
   .hero-content h1 {
