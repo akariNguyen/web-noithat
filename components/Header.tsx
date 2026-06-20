@@ -1,9 +1,18 @@
+import Image from "next/image";
+
 export default function Header() {
   return (
     <header className="site-header">
       <div className="container header-inner">
         <a href="#trang-chu" className="logo">
-          Nội Thất An Gia
+          <Image
+            src="/images/logo.png"
+            alt="Nội Thất BHome"
+            width={42}
+            height={42}
+            className="logo-image"
+          />
+          <span>Nội Thất BHome</span>
         </a>
 
         <nav className="nav-menu">

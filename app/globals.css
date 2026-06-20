@@ -51,11 +51,24 @@ a {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 22px;
   font-weight: 800;
   color: var(--primary-dark);
+  background: transparent;
 }
 
+.logo-image {
+  display: block;
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
 .nav-menu {
   display: flex;
   align-items: center;
