@@ -1,4 +1,22 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import styles from "./trangchu.module.css";
+
+const banners = [
+  {
+    image: "/images/banner.png",
+    alt: "Nội thất nhà phố gỗ sồi tự nhiên trọn gói",
+  },
+  {
+    image: "/images/banner1.jpg",
+    alt: "Không gian nội thất BHome",
+  },
+  {
+    image: "/images/banner2.png",
+    alt: "Thiết kế nội thất BHome",
+  },
+];
 
 const categories = [
   {
@@ -56,14 +74,98 @@ const serviceItems = [
 ];
 
 export default function TrangChu() {
+  const [activeBanner, setActiveBanner] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+
+  const goToNextBanner = () => {
+    setActiveBanner((current) => (current + 1) % banners.length);
+  };
+
+  const goToPreviousBanner = () => {
+    setActiveBanner(
+      (current) => (current - 1 + banners.length) % banners.length
+    );
+  };
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveBanner((current) => (current + 1) % banners.length);
+    }, 4500);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
   return (
     <section id="trang-chu" className={styles.trangchu}>
-      <div className={styles.hero}>
-        <img
-          src="/images/banner.png"
-          alt="Nội thất nhà phố gỗ sồi tự nhiên trọn gói"
-          className={styles.heroImage}
-        />
+      <div
+        className={styles.hero}
+        onTouchStart={(event) => setTouchStart(event.touches[0].clientX)}
+        onTouchEnd={(event) => {
+          if (touchStart === null) {
+            return;
+          }
+
+          const distance = touchStart - event.changedTouches[0].clientX;
+
+          if (Math.abs(distance) > 45) {
+            if (distance > 0) {
+              goToNextBanner();
+            } else {
+              goToPreviousBanner();
+            }
+          }
+
+          setTouchStart(null);
+        }}
+      >
+        <div className={styles.heroSlider}>
+          <div
+            className={styles.heroTrack}
+            style={{ transform: `translateX(-${activeBanner * 100}%)` }}
+          >
+            {banners.map((banner) => (
+              <img
+                src={banner.image}
+                alt={banner.alt}
+                className={styles.heroImage}
+                key={banner.image}
+              />
+            ))}
+          </div>
+
+          <button
+            type="button"
+            className={`${styles.heroControl} ${styles.heroControlPrevious}`}
+            onClick={goToPreviousBanner}
+            aria-label="Xem banner trước"
+          >
+            {"<"}
+          </button>
+
+          <button
+            type="button"
+            className={`${styles.heroControl} ${styles.heroControlNext}`}
+            onClick={goToNextBanner}
+            aria-label="Xem banner tiếp theo"
+          >
+            {">"}
+          </button>
+
+          <div className={styles.heroDots}>
+            {banners.map((banner, index) => (
+              <button
+                type="button"
+                className={`${styles.heroDot} ${
+                  index === activeBanner ? styles.heroDotActive : ""
+                }`}
+                onClick={() => setActiveBanner(index)}
+                aria-label={`Xem banner ${index + 1}`}
+                aria-current={index === activeBanner}
+                key={banner.image}
+              />
+            ))}
+          </div>
+        </div>
       </div>
 
       <section id="danh-muc" className={styles.categorySection}>

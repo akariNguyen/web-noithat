@@ -19,14 +19,88 @@
   justify-content: center;
 }
 
-.heroImage {
-  display: block;
+.heroSlider {
+  position: relative;
   width: min(100%, 1120px);
   height: 520px;
-  object-fit: cover;
-  object-position: top center;
+  overflow: hidden;
   border-radius: 18px;
   box-shadow: 0 16px 40px rgba(95, 61, 33, 0.16);
+  touch-action: pan-y;
+}
+
+.heroTrack {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.55s ease;
+}
+
+.heroImage {
+  display: block;
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.heroControl {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 999px;
+  background: rgba(31, 26, 20, 0.42);
+  color: #ffffff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 32px;
+  line-height: 1;
+  transform: translateY(-50%);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.heroControl:hover {
+  background: rgba(31, 26, 20, 0.62);
+  transform: translateY(-50%) scale(1.04);
+}
+
+.heroControlPrevious {
+  left: 16px;
+}
+
+.heroControlNext {
+  right: 16px;
+}
+
+.heroDots {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  z-index: 2;
+  display: flex;
+  gap: 8px;
+  transform: translateX(-50%);
+}
+
+.heroDot {
+  width: 10px;
+  height: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.46);
+  cursor: pointer;
+  padding: 0;
+  transition: width 0.2s ease, background 0.2s ease;
+}
+
+.heroDotActive {
+  width: 26px;
+  background: #ffffff;
 }
 
 /* ================= DANH MỤC ================= */
@@ -173,7 +247,7 @@
 /* ================= TABLET ================= */
 
 @media (max-width: 1024px) {
-  .heroImage {
+  .heroSlider {
     height: 440px;
   }
 
@@ -193,13 +267,29 @@
     padding: 14px 12px 8px;
   }
 
-  .heroImage {
+  .heroSlider {
     width: 100%;
     height: 260px;
     border-radius: 12px;
-    object-fit: cover;
-    object-position: top center;
     box-shadow: 0 10px 26px rgba(95, 61, 33, 0.14);
+  }
+
+  .heroControl {
+    width: 34px;
+    height: 34px;
+    font-size: 26px;
+  }
+
+  .heroControlPrevious {
+    left: 10px;
+  }
+
+  .heroControlNext {
+    right: 10px;
+  }
+
+  .heroDots {
+    bottom: 10px;
   }
 
   .categorySection {
@@ -293,7 +383,7 @@
     padding: 12px 10px 6px;
   }
 
-  .heroImage {
+  .heroSlider {
     height: 220px;
   }
 
