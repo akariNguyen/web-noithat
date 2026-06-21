@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./danhmuc.module.css";
 
 const categoryGroups = [
@@ -42,6 +43,7 @@ const categoryGroups = [
       {
         title: "Tủ bếp hiện đại",
         image: "/images/hien_dai/nhabep/anh0.png",
+        href: "/danh-muc/tu-bep-hien-dai",
         description:
           "Tủ bếp hiện đại với bề mặt phẳng, màu sắc tinh tế, tối ưu công năng và dễ vệ sinh.",
       },
@@ -92,22 +94,42 @@ export default function DanhMuc() {
               </div>
 
               <div className={styles.categoryGrid}>
-                {group.items.map((item) => (
-                  <article className={styles.categoryCard} key={item.title}>
-                    <div className={styles.categoryImageWrap}>
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className={styles.categoryImage}
-                      />
-                    </div>
+                {group.items.map((item) => {
+                  const cardContent = (
+                    <>
+                      <div className={styles.categoryImageWrap}>
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className={styles.categoryImage}
+                        />
+                      </div>
 
-                    <div className={styles.categoryContent}>
-                      <h3>{item.title}</h3>
-                      <p>{item.description}</p>
-                    </div>
-                  </article>
-                ))}
+                      <div className={styles.categoryContent}>
+                        <h3>{item.title}</h3>
+                        <p>{item.description}</p>
+                      </div>
+                    </>
+                  );
+
+                  if (item.href) {
+                    return (
+                      <Link
+                        href={item.href}
+                        className={styles.categoryCard}
+                        key={item.title}
+                      >
+                        {cardContent}
+                      </Link>
+                    );
+                  }
+
+                  return (
+                    <article className={styles.categoryCard} key={item.title}>
+                      {cardContent}
+                    </article>
+                  );
+                })}
               </div>
             </div>
           ))}
