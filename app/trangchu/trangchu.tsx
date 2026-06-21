@@ -88,12 +88,12 @@ export default function TrangChu() {
   };
 
   useEffect(() => {
-    const timer = window.setInterval(() => {
+    const timer = window.setTimeout(() => {
       setActiveBanner((current) => (current + 1) % banners.length);
     }, 4500);
 
-    return () => window.clearInterval(timer);
-  }, []);
+    return () => window.clearTimeout(timer);
+  }, [activeBanner]);
 
   return (
     <section id="trang-chu" className={styles.trangchu}>
@@ -200,7 +200,7 @@ export default function TrangChu() {
             ))}
           </div>
 
-          <div className={styles.serviceBox}>
+          <div id="goi-dich-vu" className={styles.serviceBox}>
             {serviceItems.map((item) => (
               <div className={styles.serviceItem} key={item.title}>
                 <div className={styles.serviceIcon}>{item.icon}</div>
