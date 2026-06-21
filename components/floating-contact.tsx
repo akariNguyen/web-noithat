@@ -4,7 +4,7 @@ export default function FloatingContact() {
   return (
     <div className={styles.floatingContact}>
       <a
-        href="https://zalo.me/0908623117"
+        href="https://zalo.me/"
         target="_blank"
         rel="noopener noreferrer"
         className={`${styles.contactButton} ${styles.zaloButton}`}
