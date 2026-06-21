@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Header() {
@@ -13,22 +14,23 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <a href="#trang-chu" className="logo" onClick={closeMenu}>
+        <Link href="/#trang-chu" className="logo" onClick={closeMenu}>
           <Image
             src="/images/logo.png"
             alt="Nội Thất BHome"
             width={42}
             height={42}
             className="logo-image"
+            priority
           />
           <span>Nội Thất BHome</span>
-        </a>
+        </Link>
 
         <button
           type="button"
           className={`menu-toggle ${isOpen ? "is-open" : ""}`}
           onClick={() => setIsOpen((value) => !value)}
-          aria-label="Mở menu"
+          aria-label={isOpen ? "Đóng menu" : "Mở menu"}
           aria-expanded={isOpen}
         >
           <span></span>
@@ -37,18 +39,21 @@ export default function Header() {
         </button>
 
         <nav className={`nav-menu ${isOpen ? "is-open" : ""}`}>
-          <a href="#trang-chu" onClick={closeMenu}>
+          <Link href="/#trang-chu" onClick={closeMenu}>
             Trang chủ
-          </a>
-          <a href="#danh-muc" onClick={closeMenu}>
+          </Link>
+
+          <Link href="/danh-muc" onClick={closeMenu}>
             Danh mục
-          </a>
-          <a href="#gioi-thieu" onClick={closeMenu}>
+          </Link>
+
+          <Link href="/#gioi-thieu" onClick={closeMenu}>
             Giới thiệu
-          </a>
-          <a href="#lien-he" onClick={closeMenu}>
+          </Link>
+
+          <Link href="#lien-he" onClick={closeMenu}>
             Liên hệ
-          </a>
+          </Link>
         </nav>
       </div>
     </header>

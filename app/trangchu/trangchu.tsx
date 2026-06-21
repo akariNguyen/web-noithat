@@ -3,25 +3,25 @@ import styles from "./trangchu.module.css";
 const categories = [
   {
     title: "Tủ bếp gỗ sồi tự nhiên",
-    image: "/images/nhabep/anh0.png",
+    image: "/images/do_go/nhabep/anh0.png",
     description:
       "Tủ bếp dưới, tủ bếp trên bằng gỗ sồi tự nhiên, bền chắc, chống mối mọt, ẩm mốc.",
   },
   {
     title: "Nội thất phòng khách",
-    image: "/images/phongkhach/anh0.png",
+    image: "/images/do_go/phongkhach/anh0.png",
     description:
       "Vách trang trí tivi, kệ tivi, sofa gỗ sồi, bàn trà đồng bộ, sang trọng và tinh tế.",
   },
   {
     title: "Nội thất phòng ngủ",
-    image: "/images/phongngu/anh0.png",
+    image: "/images/do_go/phongngu/anh0.png",
     description:
       "Giường ngủ, tủ quần áo, bàn trang điểm, tab đầu giường bằng gỗ sồi tự nhiên.",
   },
   {
     title: "Tủ đồ gỗ sồi",
-    image: "/images/tudo/anh0.png",
+    image: "/images/do_go/tudo/anh0.png",
     description:
       "Tận dụng tối đa không gian, tăng khả năng lưu trữ, thiết kế gọn gàng và thẩm mỹ.",
   },
@@ -60,7 +60,7 @@ export default function TrangChu() {
     <section id="trang-chu" className={styles.trangchu}>
       <div className={styles.hero}>
         <img
-          src="/images/banner.jpg"
+          src="/images/banner.png"
           alt="Nội thất nhà phố gỗ sồi tự nhiên trọn gói"
           className={styles.heroImage}
         />

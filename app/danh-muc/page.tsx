@@ -1,14 +1,14 @@
 import Header from "@/components/header1";
 import Footer from "@/components/footer";
-import TrangChu from "./trangchu/trangchu";
 import FloatingContact from "@/components/floating-contact";
+import DanhMuc from "../danhmuc/danhmuc";
 
-export default function Home() {
+export default function DanhMucPage() {
   return (
     <main>
       <Header />
 
-      <TrangChu />
+      <DanhMuc />
 
       <Footer />
 

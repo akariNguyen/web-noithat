@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="footer">
+    <footer id="lien-he" className="footer">
       <div className="footer-info-bar">
         <div className="footer-info-inner">
           <div className="footer-info-item">
