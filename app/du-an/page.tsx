@@ -14,8 +14,8 @@ type ProjectMedia = {
 
 const projects = [
   {
-    name: "Công trình trọn gói nội thất nhựa phủ laminate chị Thảo",
-    location: "A Lưới",
+    name: "Công trình trọn gói nội thất nhựa phủ laminate",
+    location: "Chị Thảo",
     description:
       "Không gian nội thất hiện đại, tối ưu công năng sử dụng với vật liệu nhựa phủ laminate bền đẹp, dễ vệ sinh.",
     cover: "/images/duan/chithao/anh0.png",
@@ -50,8 +50,8 @@ const projects = [
     ] satisfies ProjectMedia[],
   },
   {
-    name: "Nera Garden",
-    location: "Căn hộ hoàn thiện nội thất",
+    name: "Chung cư Nera Garden",
+    location: "Anh Khánh",
     description:
       "Dự án căn hộ với nhiều hạng mục nội thất đồng bộ, bố trí gọn gàng, sáng thoáng và tiện nghi.",
     cover: "/images/duan/nera_garden/anh0.png",
@@ -73,8 +73,8 @@ const projects = [
     ] satisfies ProjectMedia[],
   },
   {
-    name: "Công trình nội thất anh Thành",
-    location: "Hoàn thiện nội thất",
+    name: "Công trọn gói nội thất chung cư Nera Garden",
+    location: "Anh Thanh",
     description:
       "Không gian nội thất được hoàn thiện theo nhu cầu sử dụng thực tế, chú trọng sự gọn gàng và cảm giác ấm cúng.",
     cover: "/images/duan/anhthanh/anh0.png",
@@ -240,9 +240,18 @@ export default function DuAnPage() {
 
             <div className={styles.mediaStage}>
               {selectedMedia.type === "video" ? (
-                <video src={selectedMedia.src} controls playsInline />
+                <video
+                  src={selectedMedia.src}
+                  controls
+                  playsInline
+                  className={styles.stageVideo}
+                />
               ) : (
-                <img src={selectedMedia.src} alt={selectedMedia.alt} />
+                <img
+                  src={selectedMedia.src}
+                  alt={selectedMedia.alt}
+                  className={styles.stageImage}
+                />
               )}
             </div>
 

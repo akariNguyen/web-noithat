@@ -150,23 +150,26 @@
 
 .mediaStage {
   width: 100%;
-  height: min(62vh, 640px);
+  height: min(56vh, 600px);
   border-radius: 10px;
-  overflow: hidden;
+  overflow: visible;
   background: #15120f;
   display: grid;
   place-items: center;
 }
 
-.mediaStage img,
-.mediaStage video {
+.stageImage,
+.stageVideo {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain !important;
+  object-position: center center;
 }
 
-.mediaStage video {
+.stageVideo {
   background: #15120f;
 }
 
@@ -312,7 +315,7 @@
   }
 
   .mediaStage {
-    height: 54vh;
+    height: 48vh;
   }
 
   .lightboxInfo {
