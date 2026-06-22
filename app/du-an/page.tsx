@@ -44,6 +44,8 @@ const projects = [
       { type: "image", src: "/images/duan/eco_garden/anh1.png", alt: "Eco Garden 2" },
       { type: "image", src: "/images/duan/eco_garden/anh2.png", alt: "Eco Garden 3" },
       { type: "image", src: "/images/duan/eco_garden/anh3.png", alt: "Eco Garden 4" },
+      { type: "image", src: "/images/duan/eco_garden/anh4.png", alt: "Eco Garden 5" },
+      { type: "image", src: "/images/duan/eco_garden/anh5.png", alt: "Eco Garden 6" },
       { type: "video", src: "/video/chungcudihoa.mp4", alt: "Video Eco Garden" },
     ] satisfies ProjectMedia[],
   },
@@ -67,6 +69,21 @@ const projects = [
       { type: "image", src: "/images/duan/nera_garden/anh9.png", alt: "Nera Garden 10" },
       { type: "image", src: "/images/duan/nera_garden/anh10.png", alt: "Nera Garden 11" },
       { type: "image", src: "/images/duan/nera_garden/anh11.png", alt: "Nera Garden 12" },
+      { type: "video", src: "/images/duan/nera_garden/video0.mp4", alt: "Video Nera Garden" },
+    ] satisfies ProjectMedia[],
+  },
+  {
+    name: "Công trình nội thất anh Thành",
+    location: "Hoàn thiện nội thất",
+    description:
+      "Không gian nội thất được hoàn thiện theo nhu cầu sử dụng thực tế, chú trọng sự gọn gàng và cảm giác ấm cúng.",
+    cover: "/images/duan/anhthanh/anh0.png",
+    hover: "/images/duan/anhthanh/anh1.png",
+    media: [
+      { type: "image", src: "/images/duan/anhthanh/anh0.png", alt: "Dự án anh Thành 1" },
+      { type: "image", src: "/images/duan/anhthanh/anh1.png", alt: "Dự án anh Thành 2" },
+      { type: "image", src: "/images/duan/anhthanh/anh2.png", alt: "Dự án anh Thành 3" },
+      { type: "image", src: "/images/duan/anhthanh/anh3.png", alt: "Dự án anh Thành 4" },
     ] satisfies ProjectMedia[],
   },
 ];
