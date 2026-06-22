@@ -6,7 +6,7 @@ import styles from "./trangchu.module.css";
 const banners = [
   {
     image: "/images/banner.png",
-    alt: "Nội thất nhà phố gỗ sồi tự nhiên trọn gói",
+    alt: "Nội thất nhà phố hiện đại trọn gói",
   },
   {
     image: "/images/banner1.jpg",
@@ -20,28 +20,28 @@ const banners = [
 
 const categories = [
   {
-    title: "Tủ bếp gỗ sồi tự nhiên",
-    image: "/images/do_go/nhabep/anh0.png",
+    title: "Tủ bếp hiện đại",
+    image: "/images/hien_dai/nhabep/anh0.png",
     description:
-      "Tủ bếp dưới, tủ bếp trên bằng gỗ sồi tự nhiên, bền chắc, chống mối mọt, ẩm mốc.",
+      "Thiết kế bề mặt phẳng, tông màu tinh tế, tối ưu công năng và dễ vệ sinh.",
   },
   {
-    title: "Nội thất phòng khách",
-    image: "/images/do_go/phongkhach/anh0.png",
+    title: "Phòng khách hiện đại",
+    image: "/images/hien_dai/phongkhach/anh0.png",
     description:
-      "Vách trang trí tivi, kệ tivi, sofa gỗ sồi, bàn trà đồng bộ, sang trọng và tinh tế.",
+      "Vách tivi, sofa, bàn trà và hệ trang trí đồng bộ, sang trọng và tiện nghi.",
   },
   {
-    title: "Nội thất phòng ngủ",
-    image: "/images/do_go/phongngu/anh0.png",
+    title: "Phòng ngủ hiện đại",
+    image: "/images/hien_dai/phongngu/anh0.png",
     description:
-      "Giường ngủ, tủ quần áo, bàn trang điểm, tab đầu giường bằng gỗ sồi tự nhiên.",
+      "Giường ngủ, tủ áo, tab đầu giường và bàn trang điểm tối giản, gọn đẹp.",
   },
   {
-    title: "Tủ đồ gỗ sồi",
-    image: "/images/do_go/tudo/anh0.png",
+    title: "Tủ đồ hiện đại",
+    image: "/images/hien_dai/tudo/anh0.png",
     description:
-      "Tận dụng tối đa không gian, tăng khả năng lưu trữ, thiết kế gọn gàng và thẩm mỹ.",
+      "Tối ưu lưu trữ, tăng tính sang trọng và tận dụng hiệu quả từng khoảng không gian.",
   },
 ];
 
@@ -49,26 +49,26 @@ const serviceItems = [
   {
     icon: "🖥️",
     title: "Miễn phí thiết kế 3D",
-    description: "Tối ưu công năng – Thẩm mỹ – Phù hợp ngân sách",
+    description: "Tối ưu công năng - Thẩm mỹ - Phù hợp ngân sách",
   },
   {
     icon: "📍",
     title: "Miễn phí khảo sát tận nơi",
-    description: "Tư vấn tận tâm – Chính xác – Nhanh chóng",
+    description: "Tư vấn tận tâm - Chính xác - Nhanh chóng",
   },
   {
     icon: "🪑",
     title: "Sản xuất trực tiếp tại xưởng",
-    description: "Chất lượng kiểm soát – Giá tốt – Không qua trung gian",
+    description: "Chất lượng kiểm soát - Giá tốt - Không qua trung gian",
   },
   {
     icon: "📅",
     title: "Thi công đúng tiến độ",
-    description: "Đội ngũ chuyên nghiệp – Cam kết đúng hẹn",
+    description: "Đội ngũ chuyên nghiệp - Cam kết đúng hẹn",
   },
   {
     icon: "🛡️",
-    title: "Bảo hành dài hạn – Bảo trì tận tâm",
+    title: "Bảo hành dài hạn - Bảo trì tận tâm",
     description: "An tâm sử dụng lâu dài",
   },
 ];
@@ -173,11 +173,11 @@ export default function TrangChu() {
           <div className={styles.sectionHeader}>
             <p className={styles.eyebrow}>BHOME Furniture</p>
 
-            <h1>Gói nội thất gỗ sồi tự nhiên</h1>
+            <h1>Gói nội thất hiện đại</h1>
 
             <p>
-              Hoàn thiện không gian sống đồng bộ, sang trọng và ấm cúng với các
-              hạng mục nội thất thiết kế theo nhu cầu thực tế.
+              Hoàn thiện không gian sống đồng bộ, sang trọng và tiện nghi với
+              các hạng mục nội thất hiện đại thiết kế theo nhu cầu thực tế.
             </p>
           </div>
 

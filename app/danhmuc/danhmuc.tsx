@@ -1,71 +1,34 @@
 import Link from "next/link";
 import styles from "./danhmuc.module.css";
 
-const categoryGroups = [
+const modernItems = [
   {
-    label: "Gỗ sồi tự nhiên",
-    title: "Nội thất gỗ sồi tự nhiên",
+    title: "Tủ bếp hiện đại",
+    image: "/images/hien_dai/nhabep/anh0.png",
+    href: "/danh-muc/tu-bep-hien-dai",
     description:
-      "Không gian ấm cúng, bền chắc và sang trọng với hệ nội thất gỗ sồi tự nhiên, phù hợp nhà phố và gia đình yêu thích chất liệu mộc.",
-    items: [
-      {
-        title: "Tủ bếp gỗ sồi tự nhiên",
-        image: "/images/do_go/nhabep/anh0.png",
-        description:
-          "Tủ bếp dưới, tủ bếp trên bằng gỗ sồi tự nhiên, bền chắc, chống mối mọt, ẩm mốc.",
-      },
-      {
-        title: "Phòng khách gỗ sồi",
-        image: "/images/do_go/phongkhach/anh0.png",
-        description:
-          "Vách trang trí tivi, kệ tivi, sofa gỗ sồi, bàn trà đồng bộ, sang trọng và tinh tế.",
-      },
-      {
-        title: "Phòng ngủ gỗ sồi",
-        image: "/images/do_go/phongngu/anh0.png",
-        description:
-          "Giường ngủ, tủ quần áo, bàn trang điểm, tab đầu giường bằng gỗ sồi tự nhiên.",
-      },
-      {
-        title: "Tủ đồ gỗ sồi",
-        image: "/images/do_go/tudo/anh0.png",
-        description:
-          "Tận dụng tối đa không gian, tăng khả năng lưu trữ, thiết kế gọn gàng và thẩm mỹ.",
-      },
-    ],
+      "Tủ bếp hiện đại với bề mặt phẳng, màu sắc tinh tế, tối ưu công năng và dễ vệ sinh.",
   },
   {
-    label: "Phong cách hiện đại",
-    title: "Nội thất hiện đại",
+    title: "Phòng khách hiện đại",
+    image: "/images/hien_dai/phongkhach/anh0.png",
+    href: "/danh-muc/phong-khach-hien-dai",
     description:
-      "Thiết kế tinh gọn, sang trọng và tiện nghi với vật liệu hiện đại như MDF chống ẩm, acrylic, laminate, kính, đá và hệ đèn trang trí.",
-    items: [
-      {
-        title: "Tủ bếp hiện đại",
-        image: "/images/hien_dai/nhabep/anh0.png",
-        href: "/danh-muc/tu-bep-hien-dai",
-        description:
-          "Tủ bếp hiện đại với bề mặt phẳng, màu sắc tinh tế, tối ưu công năng và dễ vệ sinh.",
-      },
-      {
-        title: "Phòng khách hiện đại",
-        image: "/images/hien_dai/phongkhach/anh0.png",
-        description:
-          "Vách tivi, sofa, bàn trà và hệ trang trí đồng bộ, tạo điểm nhấn sang trọng cho không gian sinh hoạt.",
-      },
-      {
-        title: "Phòng ngủ hiện đại",
-        image: "/images/hien_dai/phongngu/anh0.png",
-        description:
-          "Giường ngủ, tủ áo, tab đầu giường và bàn trang điểm thiết kế tối giản, tiện nghi và thẩm mỹ.",
-      },
-      {
-        title: "Tủ đồ hiện đại",
-        image: "/images/hien_dai/tudo/anh0.png",
-        description:
-          "Tủ quần áo, tủ trưng bày và khu thay đồ hiện đại, tối ưu lưu trữ và tăng tính sang trọng.",
-      },
-    ],
+      "Vách tivi, sofa, bàn trà và hệ trang trí đồng bộ, tạo điểm nhấn sang trọng cho không gian sinh hoạt.",
+  },
+  {
+    title: "Phòng ngủ hiện đại",
+    image: "/images/hien_dai/phongngu/anh0.png",
+    href: "/danh-muc/phong-ngu-hien-dai",
+    description:
+      "Giường ngủ, tủ áo, tab đầu giường và bàn trang điểm thiết kế tối giản, tiện nghi và thẩm mỹ.",
+  },
+  {
+    title: "Tủ đồ hiện đại",
+    image: "/images/hien_dai/tudo/anh0.png",
+    href: "/danh-muc/tu-do-hien-dai",
+    description:
+      "Tủ quần áo, tủ trưng bày và khu thay đồ hiện đại, tối ưu lưu trữ và tăng tính sang trọng.",
   },
 ];
 
@@ -76,63 +39,49 @@ export default function DanhMuc() {
         <div className={styles.sectionHeader}>
           <p className={styles.eyebrow}>BHOME Furniture</p>
 
-          <h1>Danh mục nội thất nổi bật</h1>
+          <h1>Danh mục nội thất hiện đại</h1>
 
           <p>
-            Lựa chọn phong cách phù hợp với không gian sống của bạn: ấm cúng với
-            gỗ sồi tự nhiên hoặc sang trọng, tinh gọn với nội thất hiện đại.
+            Lựa chọn các hạng mục nội thất hiện đại, tinh gọn và tiện nghi cho
+            không gian sống sang trọng.
           </p>
         </div>
 
         <div className={styles.categoryGroups}>
-          {categoryGroups.map((group) => (
-            <div className={styles.categoryGroup} key={group.title}>
-              <div className={styles.groupHeader}>
-                <p>{group.label}</p>
-                <h2>{group.title}</h2>
-                <span>{group.description}</span>
-              </div>
-
-              <div className={styles.categoryGrid}>
-                {group.items.map((item) => {
-                  const cardContent = (
-                    <>
-                      <div className={styles.categoryImageWrap}>
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          className={styles.categoryImage}
-                        />
-                      </div>
-
-                      <div className={styles.categoryContent}>
-                        <h3>{item.title}</h3>
-                        <p>{item.description}</p>
-                      </div>
-                    </>
-                  );
-
-                  if (item.href) {
-                    return (
-                      <Link
-                        href={item.href}
-                        className={styles.categoryCard}
-                        key={item.title}
-                      >
-                        {cardContent}
-                      </Link>
-                    );
-                  }
-
-                  return (
-                    <article className={styles.categoryCard} key={item.title}>
-                      {cardContent}
-                    </article>
-                  );
-                })}
-              </div>
+          <div className={styles.categoryGroup}>
+            <div className={styles.groupHeader}>
+              <p>Phong cách hiện đại</p>
+              <h2>Nội thất hiện đại</h2>
+              <span>
+                Thiết kế tinh gọn, sang trọng và tiện nghi với vật liệu hiện
+                đại như MDF chống ẩm, acrylic, laminate, kính, đá và hệ đèn
+                trang trí.
+              </span>
             </div>
-          ))}
+
+            <div className={styles.categoryGrid}>
+              {modernItems.map((item) => (
+                <Link
+                  href={item.href}
+                  className={styles.categoryCard}
+                  key={item.title}
+                >
+                  <div className={styles.categoryImageWrap}>
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className={styles.categoryImage}
+                    />
+                  </div>
+
+                  <div className={styles.categoryContent}>
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
