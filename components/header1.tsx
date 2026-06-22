@@ -43,8 +43,16 @@ export default function Header() {
             Trang chủ
           </Link>
 
+          <Link href="/gioi-thieu" onClick={closeMenu}>
+            Giới thiệu
+          </Link>
+
           <Link href="/danh-muc" onClick={closeMenu}>
             Danh mục
+          </Link>
+
+          <Link href="/du-an" onClick={closeMenu}>
+            Dự án
           </Link>
 
           <Link href="/goi-dich-vu" onClick={closeMenu}>

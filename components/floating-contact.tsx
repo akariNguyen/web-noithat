@@ -4,7 +4,17 @@ export default function FloatingContact() {
   return (
     <div className={styles.floatingContact}>
       <a
-        href="https://zalo.me/"
+        href="https://www.facebook.com/Bhomehue22"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${styles.contactButton} ${styles.facebookButton}`}
+        aria-label="Facebook BHome Furniture"
+      >
+        <span className={styles.facebookText}>f</span>
+      </a>
+
+      <a
+        href="https://zalo.me/0908623117"
         target="_blank"
         rel="noopener noreferrer"
         className={`${styles.contactButton} ${styles.zaloButton}`}

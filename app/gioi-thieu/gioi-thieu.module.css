@@ -1,0 +1,337 @@
+.introPage {
+  background: #fffdf9;
+  color: #1f1a14;
+}
+
+.container {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.introSlider {
+  position: relative;
+  width: 100%;
+  height: 560px;
+  overflow: hidden;
+  background: #1f1a14;
+  touch-action: pan-y;
+}
+
+.introTrack {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.55s ease;
+}
+
+.introHeroImage {
+  display: block;
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.introControl {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 999px;
+  background: rgba(31, 26, 20, 0.42);
+  color: #ffffff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 32px;
+  line-height: 1;
+  transform: translateY(-50%);
+}
+
+.introControlPrevious {
+  left: 22px;
+}
+
+.introControlNext {
+  right: 22px;
+}
+
+.introDots {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  z-index: 2;
+  display: flex;
+  gap: 8px;
+  transform: translateX(-50%);
+}
+
+.introDot {
+  width: 10px;
+  height: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.46);
+  cursor: pointer;
+  padding: 0;
+  transition: width 0.2s ease, background 0.2s ease;
+}
+
+.introDotActive {
+  width: 28px;
+  background: #ffffff;
+}
+
+.introHeader {
+  padding: 58px 0 24px;
+  text-align: center;
+}
+
+.introHeader p {
+  margin: 0 0 8px;
+  color: #8b5e34;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.introHeader h1 {
+  margin: 0;
+  color: #5f3d21;
+  font-size: clamp(34px, 5vw, 54px);
+  line-height: 1.08;
+  text-transform: uppercase;
+}
+
+.quickNav {
+  width: fit-content;
+  min-width: 260px;
+  margin: 0 0 38px;
+  padding: 14px 18px;
+  border: 1px solid #bda88e;
+  border-radius: 4px;
+  background: #fffdf9;
+}
+
+.quickNav h2 {
+  margin: 0 0 6px;
+  color: #7a6556;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.quickNav a {
+  display: block;
+  width: fit-content;
+  margin-top: 4px;
+  color: #1f1a14;
+  font-size: 15px;
+  line-height: 1.25;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.quickNav a:hover {
+  color: #8b5e34;
+}
+
+.quickNav span {
+  display: inline-block;
+  margin-right: 3px;
+  color: #8b5e34;
+}
+
+.introList {
+  display: grid;
+  gap: 42px;
+  padding-bottom: 58px;
+}
+
+.introItem {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 46px;
+  align-items: center;
+  scroll-margin-top: 96px;
+}
+
+.introItemReverse .introImageWrap {
+  order: 2;
+}
+
+.introImageWrap {
+  overflow: hidden;
+  border: 1px solid #e1ceb8;
+  background: #ead9c4;
+  box-shadow: 0 14px 34px rgba(95, 61, 33, 0.1);
+}
+
+.introImageWrap img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.introContent {
+  min-width: 0;
+}
+
+.introNumberRow {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.introNumberRow span {
+  width: 92px;
+  height: 1px;
+  background: #5f3d21;
+}
+
+.introNumberRow strong {
+  color: #1f1a14;
+  font-size: clamp(68px, 9vw, 126px);
+  line-height: 0.82;
+  font-weight: 500;
+}
+
+.introContent h2 {
+  margin: 0 0 18px;
+  color: #5f3d21;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.introContent p {
+  margin: 0 0 14px;
+  color: #5b5148;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+@media (max-width: 1024px) {
+  .introSlider {
+    height: 460px;
+  }
+
+  .introItem {
+    gap: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: min(100% - 24px, 1120px);
+  }
+
+  .introSlider {
+    height: 300px;
+  }
+
+  .introControl {
+    width: 34px;
+    height: 34px;
+    font-size: 26px;
+  }
+
+  .introControlPrevious {
+    left: 10px;
+  }
+
+  .introControlNext {
+    right: 10px;
+  }
+
+  .introDots {
+    bottom: 10px;
+  }
+
+  .introHeader {
+    padding: 36px 0 18px;
+  }
+
+  .introHeader h1 {
+    font-size: 28px;
+  }
+
+  .introList {
+    gap: 30px;
+    padding-bottom: 38px;
+  }
+
+  .quickNav {
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 28px;
+  }
+
+  .quickNav h2 {
+    font-size: 18px;
+  }
+
+  .quickNav a {
+    font-size: 13px;
+  }
+
+  .introItem,
+  .introItemReverse {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .introItemReverse .introImageWrap {
+    order: 0;
+  }
+
+  .introNumberRow {
+    margin-bottom: 8px;
+  }
+
+  .introNumberRow span {
+    width: 56px;
+  }
+
+  .introNumberRow strong {
+    font-size: 72px;
+  }
+
+  .introContent h2 {
+    margin-bottom: 12px;
+    font-size: 23px;
+  }
+
+  .introContent p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+}
+
+@media (max-width: 430px) {
+  .container {
+    width: min(100% - 22px, 1120px);
+  }
+
+  .introSlider {
+    height: 240px;
+  }
+
+  .introHeader h1 {
+    font-size: 25px;
+  }
+
+  .introNumberRow strong {
+    font-size: 62px;
+  }
+
+  .introContent h2 {
+    font-size: 21px;
+  }
+}

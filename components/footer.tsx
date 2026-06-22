@@ -23,6 +23,22 @@ export default function Footer() {
             </div>
           </div>
 
+          <a
+            href="https://www.facebook.com/Bhomehue22"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-info-item footer-facebook"
+            aria-label="Facebook BHome Furniture"
+          >
+            <span className="footer-info-icon">f</span>
+
+            <div>
+              <p>Facebook</p>
+              <strong>BHOME FURNITURE</strong>
+              <small>facebook.com/Bhomehue22</small>
+            </div>
+          </a>
+
           <div className="footer-info-brand">
             <span className="footer-info-logo">⌂</span>
 

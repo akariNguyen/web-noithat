@@ -17,6 +17,10 @@ const banners = [
     image: "/images/banner2.png",
     alt: "Thiết kế nội thất BHome",
   },
+  {
+    image: "/images/banner3.png",
+    alt: "Thiết kế tủ bếp BHome",
+  },
 ];
 
 const categories = [
@@ -78,9 +82,36 @@ const serviceItems = [
   },
 ];
 
+const partners = [
+  {
+    name: "Halon Glass",
+    image: "/images/doitac/anh0.png",
+  },
+  {
+    name: "An Cường",
+    image: "/images/doitac/anh1.png",
+  },
+  {
+    name: "Minh Long",
+    image: "/images/doitac/anh2.png",
+  },
+  {
+    name: "Cariny",
+    image: "/images/doitac/anh4.png",
+  },
+  {
+    name: "Hafele",
+    image: "/images/doitac/anh5.png",
+  },
+];
+
 export default function TrangChu() {
   const [activeBanner, setActiveBanner] = useState(0);
+  const [activePartner, setActivePartner] = useState<number | null>(null);
   const [touchStart, setTouchStart] = useState<number | null>(null);
+
+  const selectedPartner =
+    activePartner === null ? null : partners[activePartner];
 
   const goToNextBanner = () => {
     setActiveBanner((current) => (current + 1) % banners.length);
@@ -92,6 +123,20 @@ export default function TrangChu() {
     );
   };
 
+  const goToNextPartner = () => {
+    setActivePartner((current) =>
+      current === null ? 0 : (current + 1) % partners.length
+    );
+  };
+
+  const goToPreviousPartner = () => {
+    setActivePartner((current) =>
+      current === null
+        ? partners.length - 1
+        : (current - 1 + partners.length) % partners.length
+    );
+  };
+
   useEffect(() => {
     const timer = window.setTimeout(() => {
       setActiveBanner((current) => (current + 1) % banners.length);
@@ -99,6 +144,34 @@ export default function TrangChu() {
 
     return () => window.clearTimeout(timer);
   }, [activeBanner]);
+
+  useEffect(() => {
+    if (activePartner === null) {
+      return;
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setActivePartner(null);
+      }
+
+      if (event.key === "ArrowRight") {
+        goToNextPartner();
+      }
+
+      if (event.key === "ArrowLeft") {
+        goToPreviousPartner();
+      }
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [activePartner]);
 
   return (
     <section id="trang-chu" className={styles.trangchu}>
@@ -217,8 +290,84 @@ export default function TrangChu() {
               </div>
             ))}
           </div>
+
+          <section className={styles.partnerSection} aria-labelledby="doi-tac-title">
+            <div className={styles.partnerHeader}>
+              <h2 id="doi-tac-title">Đối tác của chúng tôi</h2>
+            </div>
+
+            <div className={styles.partnerGrid}>
+              {partners.map((partner, index) => (
+                <button
+                  type="button"
+                  className={styles.partnerCard}
+                  onClick={() => setActivePartner(index)}
+                  key={partner.name}
+                >
+                  <img src={partner.image} alt={partner.name} />
+                </button>
+              ))}
+            </div>
+          </section>
         </div>
       </section>
+
+      {selectedPartner && (
+        <div
+          className={styles.partnerLightbox}
+          onClick={() => setActivePartner(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Ảnh đối tác ${selectedPartner.name}`}
+        >
+          <button
+            type="button"
+            className={`${styles.lightboxArrow} ${styles.lightboxPrevious}`}
+            onClick={(event) => {
+              event.stopPropagation();
+              goToPreviousPartner();
+            }}
+            aria-label="Xem đối tác trước"
+          >
+            {"<"}
+          </button>
+
+          <div
+            className={styles.lightboxPanel}
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              className={styles.lightboxClose}
+              onClick={() => setActivePartner(null)}
+              aria-label="Đóng ảnh đối tác"
+            >
+              ×
+            </button>
+
+            <img src={selectedPartner.image} alt={selectedPartner.name} />
+
+            <div className={styles.lightboxCaption}>
+              <strong>{selectedPartner.name}</strong>
+              <span>
+                {(activePartner ?? 0) + 1} / {partners.length}
+              </span>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            className={`${styles.lightboxArrow} ${styles.lightboxNext}`}
+            onClick={(event) => {
+              event.stopPropagation();
+              goToNextPartner();
+            }}
+            aria-label="Xem đối tác tiếp theo"
+          >
+            {">"}
+          </button>
+        </div>
+      )}
     </section>
   );
 }
