@@ -176,8 +176,8 @@
   display: block;
   width: auto !important;
   height: auto !important;
-  max-width: 88% !important;
-  max-height: 88% !important;
+  max-width: 50% !important;
+  max-height: 50% !important;
   object-fit: contain !important;
   object-position: center center !important;
 }
