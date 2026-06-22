@@ -105,6 +105,17 @@ const partners = [
   },
 ];
 
+const homeProjects = [
+  {
+    title: "Chung cư Eco Garden (Dì Hoa)",
+    video: "/video/chungcudihoa.mp4",
+  },
+  {
+    title: "Công trình trọn gói nội thất nhựa phủ laminate chị Thảo",
+    video: "/video/chithaoaluoi.mp4",
+  },
+];
+
 export default function TrangChu() {
   const [activeBanner, setActiveBanner] = useState(0);
   const [activePartner, setActivePartner] = useState<number | null>(null);
@@ -290,6 +301,27 @@ export default function TrangChu() {
               </div>
             ))}
           </div>
+
+          <section className={styles.projectSection} aria-labelledby="du-an-home-title">
+            <div className={styles.projectHeader}>
+              <h2 id="du-an-home-title">Dự án</h2>
+            </div>
+
+            <div className={styles.projectGrid}>
+              {homeProjects.map((project) => (
+                <article className={styles.projectCard} key={project.video}>
+                  <video
+                    src={project.video}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    className={styles.projectVideo}
+                  />
+                  <h3>{project.title}</h3>
+                </article>
+              ))}
+            </div>
+          </section>
 
           <section className={styles.partnerSection} aria-labelledby="doi-tac-title">
             <div className={styles.partnerHeader}>

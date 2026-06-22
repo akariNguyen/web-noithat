@@ -84,6 +84,27 @@ const projects = [
       { type: "image", src: "/images/duan/anhthanh/anh1.png", alt: "Dự án anh Thành 2" },
       { type: "image", src: "/images/duan/anhthanh/anh2.png", alt: "Dự án anh Thành 3" },
       { type: "image", src: "/images/duan/anhthanh/anh3.png", alt: "Dự án anh Thành 4" },
+      { type: "image", src: "/images/duan/anhthanh/anh4.png", alt: "Dự án anh Thành 5" },
+      { type: "image", src: "/images/duan/anhthanh/anh5.png", alt: "Dự án anh Thành 6" },
+    ] satisfies ProjectMedia[],
+  },
+  {
+    name: "Công trình nội thất nhà phố hiện đại",
+    location: "Anh Đức",
+    description:
+      "Không gian nhà phố được hoàn thiện với tủ kệ, phòng ngủ và các hạng mục nội thất gọn gàng, sạch sẽ, phù hợp sinh hoạt gia đình.",
+    cover: "/images/duan/anhduc/anh0.png",
+    hover: "/images/duan/anhduc/anh1.png",
+    media: [
+      { type: "image", src: "/images/duan/anhduc/anh0.png", alt: "Dự án anh Đức 1" },
+      { type: "image", src: "/images/duan/anhduc/anh1.png", alt: "Dự án anh Đức 2" },
+      { type: "image", src: "/images/duan/anhduc/anh2.png", alt: "Dự án anh Đức 3" },
+      { type: "image", src: "/images/duan/anhduc/anh3.png", alt: "Dự án anh Đức 4" },
+      { type: "image", src: "/images/duan/anhduc/anh4.png", alt: "Dự án anh Đức 5" },
+      { type: "image", src: "/images/duan/anhduc/anh5.png", alt: "Dự án anh Đức 6" },
+      { type: "image", src: "/images/duan/anhduc/anh6.png", alt: "Dự án anh Đức 7" },
+      { type: "image", src: "/images/duan/anhduc/anh7.png", alt: "Dự án anh Đức 8" },
+      { type: "image", src: "/images/duan/anhduc/anh8.png", alt: "Dự án anh Đức 9" },
     ] satisfies ProjectMedia[],
   },
 ];

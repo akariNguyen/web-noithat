@@ -130,7 +130,7 @@
   position: fixed;
   inset: 0;
   z-index: 1000;
-  padding: 26px;
+  padding: 18px;
   background: rgba(10, 8, 6, 0.76);
   display: flex;
   align-items: center;
@@ -139,25 +139,27 @@
 
 .lightboxPanel {
   position: relative;
-  width: min(1120px, calc(100vw - 118px));
-  max-height: calc(100vh - 48px);
+  width: min(1180px, calc(100vw - 108px));
+  height: min(820px, calc(100vh - 36px));
   padding: 18px;
   border-radius: 14px;
   background: #fffdf9;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  gap: 0;
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.36);
 }
 
 .mediaStage {
   position: relative;
-  flex: 0 0 auto;
+  flex: 1 1 auto;
+  min-height: 0;
   width: 100%;
-  height: min(56vh, calc(100vh - 270px), 600px);
+  height: auto;
   border-radius: 10px;
   overflow: hidden;
-  background: #f1eadf;
+  background: #211a14;
   display: grid;
   place-items: center;
 }
@@ -165,8 +167,8 @@
 .stageImage,
 .stageVideo {
   display: block;
-  width: auto !important;
-  height: auto !important;
+  width: 100% !important;
+  height: 100% !important;
   max-width: 100% !important;
   max-height: 100% !important;
   object-fit: contain !important;
@@ -174,14 +176,16 @@
 }
 
 .stageVideo {
+  border: 0;
   background: #15120f;
 }
 
 .lightboxInfo {
   position: relative;
   z-index: 2;
+  flex: 0 0 auto;
   background: #fffdf9;
-  padding: 14px 4px 10px;
+  padding: 14px 4px 8px;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -214,12 +218,13 @@
 .thumbnailRow {
   position: relative;
   z-index: 2;
+  flex: 0 0 72px;
   background: #fffdf9;
   display: flex;
   gap: 8px;
   overflow-x: auto;
-  padding: 4px 2px 2px;
-  flex: 0 0 auto;
+  overflow-y: hidden;
+  padding: 5px 2px 0;
 }
 
 .thumbnail {
@@ -257,8 +262,8 @@
 
 .lightboxClose {
   position: absolute;
-  top: 28px;
-  right: 28px;
+  top: 26px;
+  right: 26px;
   z-index: 3;
   width: 38px;
   height: 38px;
@@ -316,17 +321,14 @@
   }
 
   .lightbox {
-    padding: 12px;
+    padding: 10px;
   }
 
   .lightboxPanel {
-    width: calc(100vw - 54px);
-    max-height: calc(100vh - 28px);
-    padding: 12px;
-  }
-
-  .mediaStage {
-    height: min(44vh, calc(100vh - 250px));
+    width: calc(100vw - 20px);
+    height: calc(100vh - 20px);
+    padding: 10px;
+    border-radius: 12px;
   }
 
   .lightboxInfo {
@@ -343,6 +345,10 @@
     width: 72px;
     height: 50px;
     flex-basis: 72px;
+  }
+
+  .thumbnailRow {
+    flex-basis: 60px;
   }
 
   .lightboxArrow {
