@@ -261,18 +261,22 @@ export default function DuAnPage() {
 
             <div className={styles.mediaStage}>
               {selectedMedia.type === "video" ? (
-                <video
-                  src={selectedMedia.src}
-                  controls
-                  playsInline
-                  className={styles.stageVideo}
-                />
+                <div className={styles.videoFitFrame}>
+                  <video
+                    src={selectedMedia.src}
+                    controls
+                    playsInline
+                    className={styles.stageVideo}
+                  />
+                </div>
               ) : (
-                <img
-                  src={selectedMedia.src}
-                  alt={selectedMedia.alt}
-                  className={styles.stageImage}
-                />
+                <div className={styles.imageFitFrame}>
+                  <img
+                    src={selectedMedia.src}
+                    alt={selectedMedia.alt}
+                    className={styles.stageImage}
+                  />
+                </div>
               )}
             </div>
 
