@@ -200,7 +200,7 @@ export default function TrangChu() {
             ))}
           </div>
 
-          <div id="goi-dich-vu" className={styles.serviceBox}>
+          <div className={styles.serviceBox}>
             {serviceItems.map((item) => (
               <div className={styles.serviceItem} key={item.title}>
                 <div className={styles.serviceIcon}>{item.icon}</div>

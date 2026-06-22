@@ -47,7 +47,7 @@ export default function Header() {
             Danh mục
           </Link>
 
-          <Link href="/#goi-dich-vu" onClick={closeMenu}>
+          <Link href="/goi-dich-vu" onClick={closeMenu}>
             Gói dịch vụ
           </Link>
 
