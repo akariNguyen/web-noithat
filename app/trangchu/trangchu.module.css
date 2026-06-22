@@ -145,10 +145,13 @@
 }
 
 .categoryCard {
+  display: block;
   overflow: hidden;
   border: 1px solid #e6d8c8;
   border-radius: 18px;
   background: #fffaf3;
+  color: inherit;
+  text-decoration: none;
   box-shadow: 0 12px 30px rgba(95, 61, 33, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }

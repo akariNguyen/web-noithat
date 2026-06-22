@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import styles from "./trangchu.module.css";
 
@@ -21,24 +22,28 @@ const banners = [
 const categories = [
   {
     title: "Tủ bếp hiện đại",
+    href: "/danh-muc/tu-bep-hien-dai",
     image: "/images/hien_dai/nhabep/anh0.png",
     description:
       "Thiết kế bề mặt phẳng, tông màu tinh tế, tối ưu công năng và dễ vệ sinh.",
   },
   {
     title: "Phòng khách hiện đại",
+    href: "/danh-muc/phong-khach-hien-dai",
     image: "/images/hien_dai/phongkhach/anh0.png",
     description:
       "Vách tivi, sofa, bàn trà và hệ trang trí đồng bộ, sang trọng và tiện nghi.",
   },
   {
     title: "Phòng ngủ hiện đại",
+    href: "/danh-muc/phong-ngu-hien-dai",
     image: "/images/hien_dai/phongngu/anh0.png",
     description:
       "Giường ngủ, tủ áo, tab đầu giường và bàn trang điểm tối giản, gọn đẹp.",
   },
   {
     title: "Tủ đồ hiện đại",
+    href: "/danh-muc/tu-do-hien-dai",
     image: "/images/hien_dai/tudo/anh0.png",
     description:
       "Tối ưu lưu trữ, tăng tính sang trọng và tận dụng hiệu quả từng khoảng không gian.",
@@ -47,27 +52,27 @@ const categories = [
 
 const serviceItems = [
   {
-    icon: "🖥️",
+    icon: "3D",
     title: "Miễn phí thiết kế 3D",
     description: "Tối ưu công năng - Thẩm mỹ - Phù hợp ngân sách",
   },
   {
-    icon: "📍",
+    icon: "KS",
     title: "Miễn phí khảo sát tận nơi",
     description: "Tư vấn tận tâm - Chính xác - Nhanh chóng",
   },
   {
-    icon: "🪑",
+    icon: "SX",
     title: "Sản xuất trực tiếp tại xưởng",
     description: "Chất lượng kiểm soát - Giá tốt - Không qua trung gian",
   },
   {
-    icon: "📅",
+    icon: "TC",
     title: "Thi công đúng tiến độ",
     description: "Đội ngũ chuyên nghiệp - Cam kết đúng hẹn",
   },
   {
-    icon: "🛡️",
+    icon: "BH",
     title: "Bảo hành dài hạn - Bảo trì tận tâm",
     description: "An tâm sử dụng lâu dài",
   },
@@ -176,14 +181,14 @@ export default function TrangChu() {
             <h1>Gói nội thất hiện đại</h1>
 
             <p>
-              Hoàn thiện không gian sống đồng bộ, sang trọng và tiện nghi với
-              các hạng mục nội thất hiện đại thiết kế theo nhu cầu thực tế.
+              Hoàn thiện không gian sống đồng bộ, sang trọng và tiện nghi với các hạng
+              mục nội thất hiện đại thiết kế theo nhu cầu thực tế.
             </p>
           </div>
 
           <div className={styles.categoryGrid}>
             {categories.map((item) => (
-              <article className={styles.categoryCard} key={item.title}>
+              <Link href={item.href} className={styles.categoryCard} key={item.title}>
                 <div className={styles.categoryImageWrap}>
                   <img
                     src={item.image}
@@ -196,7 +201,7 @@ export default function TrangChu() {
                   <h2>{item.title}</h2>
                   <p>{item.description}</p>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
 
