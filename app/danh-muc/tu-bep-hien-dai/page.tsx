@@ -1,9 +1,10 @@
 import Header from "@/components/header1";
 import Footer from "@/components/footer";
 import FloatingContact from "@/components/floating-contact";
+import ProductGallery from "./product-gallery";
 import styles from "./tu-bep-hien-dai.module.css";
 
-const kitchenImages = [
+const kitchenProducts = [
   {
     image: "/images/hien_dai/nhabep/anh0.png",
     title: "Bếp xám đen sang trọng",
@@ -53,25 +54,12 @@ export default function TuBepHienDaiPage() {
             <p>BHOME Furniture</p>
             <h1>Tủ bếp hiện đại</h1>
             <span>
-              Tổng hợp các mẫu bếp hiện đại trong thư mục hình ảnh, tập trung
-              vào đường nét phẳng, vật liệu dễ vệ sinh và bố cục tiện nghi.
+              Chọn một mẫu sản phẩm để xem ảnh lớn và thông tin chi tiết trong
+              popup.
             </span>
           </div>
 
-          <div className={styles.galleryGrid}>
-            {kitchenImages.map((item) => (
-              <article className={styles.galleryCard} key={item.image}>
-                <div className={styles.imageWrap}>
-                  <img src={item.image} alt={item.title} />
-                </div>
-
-                <div className={styles.cardContent}>
-                  <h2>{item.title}</h2>
-                  <p>{item.description}</p>
-                </div>
-              </article>
-            ))}
-          </div>
+          <ProductGallery products={kitchenProducts} />
         </div>
       </section>
 
